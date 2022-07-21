@@ -1,3 +1,5 @@
-# Introduction
+layout: page
+title: "Introduction"
+permalink: /introduction/
 
-An attempt to create browser in Rust.s
+# Introduction
