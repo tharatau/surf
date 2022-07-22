@@ -1,4 +1,4 @@
-FROM rust AS RUNTIME
+FROM rust:1.62.1 AS RUNTIME
 WORKDIR ./rust
 COPY . .
 RUN cargo build
