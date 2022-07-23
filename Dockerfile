@@ -1,4 +1,4 @@
-FROM ubuntu:22.04 AS OPERATING_SYSTEM
+FROM ubuntu:22.04
 RUN apt update
 RUN apt install -y libglib2.0-dev
 RUN apt install -y libpango1.0-dev
