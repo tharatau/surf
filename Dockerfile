@@ -1,8 +1,6 @@
 FROM rust:1.62.1 AS RUNTIME
 WORKDIR ./rust
 COPY . .
-# RUN export PKG_CONFIG_PATH=./usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
-# RUN export PKG_CONFIG_PATH=:/usr/local/pango-1.50.6
 RUN cargo build
 
 FROM ubuntu:22.04 AS OPERATING_SYSTEM
