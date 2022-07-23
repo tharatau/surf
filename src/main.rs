@@ -1,23 +1,26 @@
 use gtk::prelude::*;
 use gtk::{Application, ApplicationWindow};
 
+const APP_ID: &str = "org.pahuch.browser";
+
 fn main() {
-    let app = Application::builder()
-        .application_id("org.pahuch.browser")
+    // Create a new application
+    let app = Application::builder().application_id(APP_ID).build();
+
+    // Connect to "activate" signal of `app`
+    app.connect_activate(build_ui);
+
+    // Run the application
+    app.run();
+}
+
+fn build_ui(app: &Application) {
+    // Create a window and set the title
+    let window = ApplicationWindow::builder()
+        .application(app)
+        .title("Pahuch")
         .build();
 
-    app.connect_activate(|app| {
-        // We create the main window.
-        let win = ApplicationWindow::builder()
-            .application(app)
-            .default_width(500)
-            .default_height(500)
-            .title("Pahuch")
-            .build();
-
-        // Don't forget to make all widgets visible.
-        win.show_all();
-    });
-
-    app.run();
+    // Present window
+    window.present();
 }
