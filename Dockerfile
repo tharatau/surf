@@ -1,8 +1,3 @@
-FROM rust:1.62.1-slim AS RUNTIME
-WORKDIR /rust
-COPY . .
-RUN cargo build
-
 FROM ubuntu:22.04 AS OPERATING_SYSTEM
 RUN apt update
 RUN apt install -y libglib2.0-dev
