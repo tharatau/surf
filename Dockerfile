@@ -1,5 +1,6 @@
 FROM rust:1.62.1 AS RUNTIME
-WORKDIR ./rust
+ENV PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig/
+WORKDIR /rust
 COPY . .
 RUN cargo build
 
@@ -12,7 +13,6 @@ RUN apt install -y libatk1.0-dev
 RUN apt install -y gobject-introspection
 RUN apt install -y libepoxy-dev
 RUN apt install -y libgtk-4-dev
-RUN export PKG_CONFIG_PATH=./usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
-COPY --from=RUNTIME ./rust/target/debug/pahuch ./bin/pahuch
+COPY --from=RUNTIME /rust/target/debug/pahuch /bin/pahuch
 WORKDIR ./bin
 CMD pahuch
