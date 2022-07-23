@@ -9,9 +9,6 @@ RUN apt install -y libepoxy-dev
 RUN apt install -y libgtk-4-dev
 RUN apt install -y cargo
 RUN apt install -y pkg-config
-RUN apt install -y xauth
-RUN apt install -y xorg
-RUN apt install -y openbox
 WORKDIR ./rust
 COPY . .
 RUN cargo build
