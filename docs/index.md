@@ -4,10 +4,10 @@
 
 Build the Docker container
 ```
-docker build -t ayushmxn/pahuch .
+docker-compose build
 ```
 
 Run the Docker container
 ```
-docker run ayushmxn/pahuch
+docker-compose up
 ```
