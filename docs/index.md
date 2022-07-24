@@ -4,10 +4,10 @@
 
 Build the Docker container
 ```
-docker-compose build
+docker compose build
 ```
 
 Run the Docker container
 ```
-docker-compose up
+docker compose up
 ```
