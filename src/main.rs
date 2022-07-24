@@ -19,6 +19,8 @@ fn build_ui(app: &Application) {
     let window = ApplicationWindow::builder()
         .application(app)
         .title("Pahuch")
+        .default_height(500)
+        .default_width(500)
         .build();
 
     // Present window
