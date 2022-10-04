@@ -1,6 +1,9 @@
-.PHONY: clean
+.PHONY: clean deps
 clean:
 	rm surf
 
+deps:
+	sudo apt install curl
+
 surf: surf.c
-	clang surf.c -o surf -I ./git_modules/curl/include/curl
+	clang surf.c -o surf -lcurl

@@ -4,9 +4,6 @@
 int main()
 {
     CURL *curl;
-    char url[] =
-        "https://c-for-dummies.com/curl_test.txt";
-
     curl = curl_easy_init();
     if (curl) {
         CURLcode res;
