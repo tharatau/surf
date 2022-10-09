@@ -1,16 +1,9 @@
-#include <stdio.h>
-#include <curl/curl.h>
+#include "surf.h"
 
-int main()
+int main(int argc, char *argv[])
 {
-    CURL *curl;
-    curl = curl_easy_init();
-    if (curl) {
-        CURLcode res;
-        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-        res = curl_easy_perform(curl);
-        curl_easy_cleanup(curl);
+    if (argc == 1) {
+        fprintf(stderr, "Error: Received 0 arguments but expected 1. The `uri` parameter is missing.\n");
+        exit(1);
     }
-
-    return 0;
 }

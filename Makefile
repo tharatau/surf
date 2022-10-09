@@ -8,4 +8,4 @@ install:
 	bash ./deps.sh
 
 surf: surf.c
-	clang surf.c -o surf -lcurl
+	clang surf.c -o surf
