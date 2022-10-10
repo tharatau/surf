@@ -5,7 +5,7 @@ int validate(int argc, char *argv[]) {
     regex_t re;
     int value;
 
-    char scheme_re[] = "^http|https|ftp|mailto|file|data|irc$";
+    char scheme_re[] = "^http|https$";
 
     if (argc == 1) {
         fprintf(stderr, "[ ERROR ] Received 0 arguments but expected 1. The `uri` parameter is missing.\n");
