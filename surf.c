@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "service_http.h"
+
 char scheme(char uri[], char test_scheme[]){
     regex_t re;
     int value;
@@ -30,7 +32,7 @@ int main(int argc, char *argv[])
     }
 
     if (scheme(argv[1], "http") == 0) {
-
+        service_http_get(argv[1]);
     } else {
         fprintf(stderr, "[ ERROR ] Unsupported URI scheme.");
     }

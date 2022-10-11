@@ -1,11 +1,15 @@
-.PHONY: clean install
+.PHONY: all setup
 
-clean:
+all: service_http.o surf.o
+	clang service_http.o surf.o -o surf -lcurl
+
+setup:
 	rm -f surf *.o
-
-install:
 	chmod 755 ./deps.sh
 	bash ./deps.sh
 
+service_http: service_http.c
+	clang service_http.c -c
+
 surf: surf.c
-	clang surf.c -o surf
+	clang surf.c -c
