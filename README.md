@@ -12,3 +12,11 @@ chmod 755 ./deps.sh
 ```
 
 Run `make surf` to build the binary.
+
+## Usage
+
+```shell
+./surf https://google.ca
+```
+
+More frontends are in the works.

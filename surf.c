@@ -1,7 +1,24 @@
-#include "surf.h"
+#include <regex.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int validate(int argc) {
+char scheme(char uri[], char test_scheme[]){
+    regex_t re;
+    int value;
+    value = regcomp(&re, test_scheme, REG_EXTENDED);
+    value = regexec(&re, uri, 0, NULL, 0);
+    regfree(&re);
 
+    if (value == 0) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+int main(int argc, char *argv[])
+{
     if (argc == 1) {
         fprintf(stderr, "[ ERROR ] Received 0 arguments but expected 1. The `uri` parameter is missing.\n");
         return 1;
@@ -12,15 +29,11 @@ int validate(int argc) {
         fprintf(stdout, "[ INFO ] Parsing first argument and ignoring the rest.\n");
     }
 
-    return 0;
+    if (scheme(argv[1], "http") == 0) {
 
-}
-
-int main(int argc, char *argv[])
-{
-    int e = validate(argc);
-    if (e != 0) {
-        return e;
+    } else {
+        fprintf(stderr, "[ ERROR ] Unsupported URI scheme.");
     }
+
     return 0;
 }
