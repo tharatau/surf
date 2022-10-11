@@ -1,9 +1,9 @@
-.PHONY: all setup
+.PHONY: all update
 
 all: service_http.o surf.o
 	clang service_http.o surf.o -o surf -lcurl
 
-setup:
+update:
 	rm -f surf *.o
 	chmod 755 ./deps.sh
 	bash ./deps.sh

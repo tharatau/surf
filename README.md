@@ -2,18 +2,23 @@
 
 Experimental application to surf the internet with the goal of inversion of control.
 
-## Setup
+## Getting Started
 
-Run `make` to install the relevant packages. If that doesn't work, then run the script manually:
+Clone the repo
+```shell
+git clone git@github.com:ayushmxn/surf.git
+```
 
+Install dependencies
 ```shell
 chmod 755 ./deps.sh
 ./install.sh
 ```
 
-Run `make` to build the binary.
-
-## Usage
+Update dependencies
+```shell
+make update
+```
 
 ```shell
 ./surf https://www.google.ca
