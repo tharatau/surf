@@ -20,6 +20,7 @@ Update dependencies
 make update
 ```
 
+Run surf:
 ```shell
 ./surf https://www.google.ca
 ```
