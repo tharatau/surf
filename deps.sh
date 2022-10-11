@@ -2,8 +2,8 @@ deps=(
     "bash"
     "clang"
     "curl"
-    "make"
     "git"
+    "make"
 )
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
